@@ -151,7 +151,7 @@ def buscar(id):
                 return "Algo salio mal", 404
             
 #metodo para eliminar todos los registros de la base de datos de un conductor
-@app.route('/eliminar/<id>', methods=['POST'])
+@app.route('/eliminar/<id>', methods=['DELETE'])
 def delete(id):
     conn = db_connexion()
     cursor = conn.cursor()
@@ -165,4 +165,4 @@ def index():
 
 #metodo para levantar el servidor local
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
